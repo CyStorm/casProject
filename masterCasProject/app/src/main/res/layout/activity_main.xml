@@ -20,8 +20,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -31,17 +29,9 @@
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
+        android:id="@+id/chadTestButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="@string/button" />
 
 </android.support.design.widget.CoordinatorLayout>
