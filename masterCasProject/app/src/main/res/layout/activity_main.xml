@@ -34,4 +34,11 @@
         android:layout_height="wrap_content"
         android:text="@string/button" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:text="@string/hi" />
+
 </android.support.design.widget.CoordinatorLayout>
