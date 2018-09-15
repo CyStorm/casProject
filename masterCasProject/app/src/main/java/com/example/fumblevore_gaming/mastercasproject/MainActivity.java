@@ -1,5 +1,6 @@
 package com.example.fumblevore_gaming.mastercasproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,10 +10,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button chatTestbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -32,12 +34,13 @@ public class MainActivity extends AppCompatActivity {
         Button chadTestButton = findViewById(R.id.chadTestButton);
 
         chadTestButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("chadTest", "button is work");
-            }
-        });
-    }
+                @Override
+                public void onClick (View v){
+                    openActivity2();
+                    Log.d("chadTest", "button is work");
+                };
+            });
+        }
 //yes
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+    public void openActivity2(){
+        Intent intent = new Intent(this, Activity2.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
