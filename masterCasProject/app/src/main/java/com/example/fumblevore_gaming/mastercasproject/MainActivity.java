@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-
+// daniel
 public class MainActivity extends AppCompatActivity {
     private Button chatTestbutton;
     @Override
