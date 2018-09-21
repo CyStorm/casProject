@@ -1,5 +1,0 @@
-Managebac Mobile app is suck, so we make app for (not only) IB students to do shit, like track
-marks, assignments, tests, and all that shit. Basically a more user friendly UI and features
-for students unlike conventional calender apps or managebac moblie app which lacks features.
-Just make framework now we can add new features as we go. Like helpful resource links,
-other features can come natually.
