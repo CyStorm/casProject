@@ -7,15 +7,15 @@
         <item
             android:id="@+id/nav_calendar"
             android:icon="@drawable/ic_message"
-            android:title="Message"></item>
+            android:title="My Calendar"></item>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Placeholder">
         <menu>
             <item
                 android:id="@+id/nav_message"
                 android:icon="@drawable/ic_message"
-                android:title="Message"></item>
+                android:title="Placeholder"></item>
         </menu>
     </item>
 </menu>
