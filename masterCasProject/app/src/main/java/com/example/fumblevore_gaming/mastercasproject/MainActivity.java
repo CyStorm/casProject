@@ -15,24 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-<<<<<<< HEAD
-// cahhd here make comment"
-public class MainActivity extends AppCompatActivity {
-    private Button chatTestbutton;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-=======
 import android.widget.Toast;
 import java.util.Calendar;
 import java.util.Date;
@@ -65,7 +47,6 @@ import com.squareup.timessquare.CalendarPickerView;
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new CalendarFragment()).commit();
                 navigationView.setCheckedItem(R.id.nav_calendar);
->>>>>>> DanielTest
             }
             Date today = new Date();
             Calendar nextYear = Calendar.getInstance();
