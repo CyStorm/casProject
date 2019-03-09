@@ -20,7 +20,6 @@ import java.util.Calendar;
 import java.util.Date;
 import com.squareup.timessquare.CalendarPickerView;
 
-// daniel
     public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         private Button chatTestbutton;
@@ -48,6 +47,7 @@ import com.squareup.timessquare.CalendarPickerView;
                         new CalendarFragment()).commit();
                 navigationView.setCheckedItem(R.id.nav_calendar);
             }
+            
             Date today = new Date();
             Calendar nextYear = Calendar.getInstance();
             nextYear.add(Calendar.YEAR, 1);
@@ -75,6 +75,7 @@ import com.squareup.timessquare.CalendarPickerView;
 
                 }
         });
+       
         }
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
