@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.example.fumblevore_gaming.mastercasproject.NotificationsTest.CHANNEL_1_ID;
 import com.example.fumblevore_gaming.mastercasproject.NotificationsTest.CHANNEL_2_ID;
 
-public class MainActivity extends AppCompatActivity {
+public class NotifMain extends AppCompatActivity {
     private NotificationManagerCompat notificationManager;
     private EditText editTextTitle;
     private EditText editTextMessage;
