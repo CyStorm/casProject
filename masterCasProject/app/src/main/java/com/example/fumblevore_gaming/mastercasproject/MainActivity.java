@@ -70,6 +70,7 @@ import com.squareup.timessquare.CalendarPickerView;
 
                     Toast.makeText(MainActivity.this, selectedDate, Toast.LENGTH_SHORT).show();
                 }
+
                 @Override
                 public void onDateUnselected(Date date) {
 
@@ -122,5 +123,7 @@ import com.squareup.timessquare.CalendarPickerView;
 
             return super.onOptionsItemSelected(item);
         }
+
+        
     }
 
