@@ -26,22 +26,37 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent"/>
+            </LinearLayout>
 
     <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:id="@+id/nav_view"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu" />
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+=======
+>>>>>>> 32b10c8b433ce8eaf70fa57a32cf412b6c9ca13b
+=======
+>>>>>>> 32b10c8b433ce8eaf70fa57a32cf412b6c9ca13b
     <com.squareup.timessquare.CalendarPickerView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
+        android:layout_height="match_parent" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 32b10c8b433ce8eaf70fa57a32cf412b6c9ca13b
+=======
+>>>>>>> 32b10c8b433ce8eaf70fa57a32cf412b6c9ca13b
+=======
+>>>>>>> 32b10c8b433ce8eaf70fa57a32cf412b6c9ca13b
 
 
 </android.support.v4.widget.DrawerLayout>
