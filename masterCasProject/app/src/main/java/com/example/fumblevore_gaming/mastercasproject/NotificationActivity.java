@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.fumblevore_gaming.mastercasproject.NotificationsTest.CHANNEL_1_ID;
-import com.example.fumblevore_gaming.mastercasproject.NotificationsTest.CHANNEL_2_ID;
+import static com.example.fumblevore_gaming.mastercasproject.NotificationsTest.CHANNEL_1_ID;
+import static com.example.fumblevore_gaming.mastercasproject.NotificationsTest.CHANNEL_2_ID;
 
 public class NotifMain extends AppCompatActivity {
     private NotificationManagerCompat notificationManager;
@@ -47,7 +47,7 @@ public class NotifMain extends AppCompatActivity {
         String message = editTextMessage.getText().toString();
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
-                .setSmallIcon(R.drawable.ic_two)
+                .setSmallIcon(R.drawable.ic_one)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
