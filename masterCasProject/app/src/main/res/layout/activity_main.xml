@@ -26,8 +26,8 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent"/>
+            </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -36,11 +36,5 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu" />
-
-    <com.squareup.timessquare.CalendarPickerView
-        android:id="@+id/calendar_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
 </android.support.v4.widget.DrawerLayout>
+
