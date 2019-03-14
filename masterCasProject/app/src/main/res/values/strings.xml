@@ -3,7 +3,4 @@
     <string name="action_settings">Settings</string>
     <string name="button">Button</string>
     <string name="title_text">Welcome To Our App</string>
-    <string name="navigation_drawer_open">Open Navigation Drawer</string>
-    <string name="navigation_drawer_close">Close Navigation Drawer</string>
-    <string name="title_activity_date_detail">dateDetail</string>
 </resources>
