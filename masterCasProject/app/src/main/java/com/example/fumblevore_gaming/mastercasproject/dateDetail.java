@@ -34,8 +34,11 @@ public class DateDetail extends AppCompatActivity {
         });
 
         // get all attributes from addtask and store them permanantly and display in a list
-        Intent i = getIntent();
-        String message = i.getStringExtra("TaskName");
+        Intent recieveData = getIntent();
+        String TaskName = recieveData.getStringExtra("TaskName");
+        String TaskDescription = recieveData.getStringExtra("TaskDescription");
+        String TaskSubject = recieveData.getStringExtra("TaskSubject");
+        String TaskPriority = recieveData.getStringExtra("TaskPriority");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
