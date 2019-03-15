@@ -7,4 +7,5 @@
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="title_activity_date_detail">dateDetail</string>
     <string name="title_activity_view_details">viewDetails</string>
+    <string name="title_activity_add_task">AddTask</string>
 </resources>
