@@ -27,4 +27,6 @@ public class viewDetails extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+
+
 }

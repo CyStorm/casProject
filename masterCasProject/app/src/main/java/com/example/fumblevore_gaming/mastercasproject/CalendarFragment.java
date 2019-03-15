@@ -31,6 +31,7 @@ public class CalendarFragment extends Fragment {
             @Override
             public void onDateSelected(Date date) {
 
+
             }
             @Override
             public void onDateUnselected(Date date) {
