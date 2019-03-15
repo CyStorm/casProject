@@ -8,4 +8,7 @@
     <string name="title_activity_date_detail">dateDetail</string>
     <string name="title_activity_view_details">viewDetails</string>
     <string name="title_activity_add_task">AddTask</string>
+    <string name="testInputText"></string>
+    <string name="testOutputText">TextView</string>
+    <string name="testOUT">TextView</string>
 </resources>

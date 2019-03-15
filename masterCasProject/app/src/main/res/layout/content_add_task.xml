@@ -14,8 +14,78 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
         android:layout_marginRight="160dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="32dp"
         android:text="ADD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="579dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/taskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/taskDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/taskTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Time"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/taskSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Subject"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/taskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/taskPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Priority"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/testOUT"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="@string/testOUT" />
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
