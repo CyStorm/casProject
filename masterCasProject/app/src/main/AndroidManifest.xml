@@ -28,15 +28,6 @@
                 android:value="com.example.fumblevore_gaming.mastercasproject.MainActivity" />
         </activity>
         <activity
-            android:name=".viewDetails"
-            android:label="@string/title_activity_view_details"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.fumblevore_gaming.mastercasproject.MainActivity" />
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
