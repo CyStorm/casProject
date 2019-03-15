@@ -11,4 +11,5 @@
     <string name="testInputText"></string>
     <string name="testOutputText">TextView</string>
     <string name="testOUT">TextView</string>
+    <string name="testText">TextView</string>
 </resources>

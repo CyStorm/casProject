@@ -1,5 +1,6 @@
 package com.example.fumblevore_gaming.mastercasproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringDef;
 import android.support.design.widget.FloatingActionButton;
@@ -41,8 +42,19 @@ public class AddTask extends AppCompatActivity {
                 TaskDescription = TaskDescriptionIN.getText().toString();
                 TaskPriority = TaskPriorityIN.getText().toString();
 
+// find way of having date and time identifier to transfer to display screen.
+
                 TextView display = (TextView) findViewById(R.id.testOUT);
                 display.setText(TaskName);
+
+                Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
+                transferToDisplay.putExtra("TaskName", TaskName);
+                transferToDisplay.putExtra("TaskSubject", TaskSubject);
+                transferToDisplay.putExtra("TaskDescription", TaskDescription);
+                transferToDisplay.putExtra("TaskPriority", TaskPriority);
+
+                startActivity(transferToDisplay);
+
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
