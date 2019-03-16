@@ -40,6 +40,7 @@ public class DateDetail extends AppCompatActivity {
         String TaskSubject = recieveData.getStringExtra("TaskSubject");
         String TaskPriority = recieveData.getStringExtra("TaskPriority");
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
