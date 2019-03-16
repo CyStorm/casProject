@@ -12,4 +12,12 @@
     <string name="testOutputText">TextView</string>
     <string name="testOUT">TextView</string>
     <string name="testText">TextView</string>
+    <string-array name="PriorityTypes">
+        <item>Distant</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+        <item>Urgent</item>
+    </string-array>
+
 </resources>

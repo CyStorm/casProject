@@ -8,9 +8,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Spinner;
 
 public class AddTask extends AppCompatActivity {
 
@@ -28,7 +30,11 @@ public class AddTask extends AppCompatActivity {
         EditText TaskTimeIN = (EditText) findViewById(R.id.taskTime);
         EditText TaskSubjectIN = (EditText) findViewById(R.id.taskSubject);
         EditText TaskDescriptionIN = (EditText) findViewById(R.id.taskDescription);
-        EditText TaskPriorityIN = (EditText) findViewById(R.id.taskPriority);
+        Spinner TaskPriorityIN = (Spinner) findViewById(R.id.taskPriority);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.PriorityTypes, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        TaskPriorityIN.setAdapter(adapter);
+
 
 
         Button createNewTask = findViewById(R.id.addTaskCreate);
@@ -40,12 +46,9 @@ public class AddTask extends AppCompatActivity {
                 TaskName = TaskNameIN.getText().toString();
                 TaskSubject = TaskSubjectIN.getText().toString();
                 TaskDescription = TaskDescriptionIN.getText().toString();
-                TaskPriority = TaskPriorityIN.getText().toString();
 
 // find way of having date and time identifier to transfer to display screen.
 
-                TextView display = (TextView) findViewById(R.id.testOUT);
-                display.setText(TaskName);
 
                 Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
                 transferToDisplay.putExtra("TaskName", TaskName);
