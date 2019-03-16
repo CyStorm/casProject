@@ -49,14 +49,13 @@
             android:ems="10"
             android:hint="Date" />
 
-        <EditText
+        <TextView
             android:id="@+id/taskTime"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
             android:textSize="25sp"
-            android:hint="Time"
-            android:inputType="time" />
+            android:hint="Time" />
 
         <EditText
             android:id="@+id/taskSubject"

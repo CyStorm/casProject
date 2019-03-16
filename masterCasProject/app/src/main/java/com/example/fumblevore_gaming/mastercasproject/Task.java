@@ -6,14 +6,16 @@ public class Task {
     private String subject;
     private String priority;
     private String date;
+    private String time;
 
 
-    public Task(String name, String subject, String description, String priority, String date) {
+    public Task(String name, String subject, String description, String priority, String date, String time) {
         this.name = name;
         this.description = description;
         this.subject = subject;
         this.priority = priority;
         this.date = date;
+        this.time = time;
     }
 
     public String getName() {
@@ -34,5 +36,9 @@ public class Task {
 
     public String getDate() {
         return date;
+    }
+
+    public String getTime() {
+        return time;
     }
 }

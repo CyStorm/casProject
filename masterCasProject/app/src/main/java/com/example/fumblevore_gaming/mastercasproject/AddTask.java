@@ -1,6 +1,7 @@
 package com.example.fumblevore_gaming.mastercasproject;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -19,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 
 public class AddTask extends AppCompatActivity {
 
@@ -35,15 +37,18 @@ public class AddTask extends AppCompatActivity {
 
         TextView TaskDateIN = (TextView) findViewById(R.id.taskDate);
 
-        EditText TaskTimeIN = (EditText) findViewById(R.id.taskTime);
+        TextView TaskTimeIN = (TextView) findViewById(R.id.taskTime);
         EditText TaskSubjectIN = (EditText) findViewById(R.id.taskSubject);
         EditText TaskDescriptionIN = (EditText) findViewById(R.id.taskDescription);
 
+
+        // this is where the spinner for priority is set
         Spinner TaskPriorityIN = (Spinner) findViewById(R.id.taskPriority);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.PriorityTypes, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         TaskPriorityIN.setAdapter(adapter);
 
+        // date pick dialogue code
         TaskDateIN.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Calendar cal = Calendar.getInstance();
@@ -56,7 +61,6 @@ public class AddTask extends AppCompatActivity {
                 dialog.show();
             }
         });
-
         dateSelect = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -66,6 +70,23 @@ public class AddTask extends AppCompatActivity {
             }
         };
 
+        // time selection dialogue code
+        TaskTimeIN.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timeSelect = new TimePickerDialog(AddTask.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
+                        String selectedTime = hourOfDay + ":" + minutes;
+                        TaskTimeIN.setText(selectedTime);
+                    }
+                }, 0, 0, true);
+                timeSelect.show();
+            }
+        });
+
+        // functionality to the button ADD
         Button createNewTask = findViewById(R.id.addTaskCreate);
         createNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,16 +98,18 @@ public class AddTask extends AppCompatActivity {
                 TaskDescription = TaskDescriptionIN.getText().toString();
                 TaskPriority = TaskPriorityIN.getSelectedItem().toString();
                 TaskDate = TaskDateIN.getText().toString();
+                TaskTime = TaskTimeIN.getText().toString();
 
-// find way of having date and time identifier to transfer to display screen.
-                Task test = new Task(TaskName, TaskSubject, TaskDescription, TaskPriority, TaskDate);
+                // creates new task object with inputted attributes.
+                Task test = new Task(TaskName, TaskSubject, TaskDescription, TaskPriority, TaskDate, TaskTime);
                 Log.d("task", test.getName());
                 Log.d("task", test.getDescription());
                 Log.d("task", test.getPriority());
                 Log.d("task", test.getSubject());
                 Log.d("task", test.getDate());
+                Log.d("task", test.getTime());
 
-
+                // potentially useless code to send information to other activity.
                 Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
                 transferToDisplay.putExtra("TaskName", TaskName);
                 transferToDisplay.putExtra("TaskSubject", TaskSubject);
