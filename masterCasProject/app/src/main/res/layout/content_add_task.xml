@@ -35,7 +35,7 @@
         <EditText
             android:id="@+id/taskName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="Name"
             android:inputType="text" />
@@ -43,7 +43,7 @@
         <EditText
             android:id="@+id/taskDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="Date"
             android:inputType="date" />
@@ -51,7 +51,7 @@
         <EditText
             android:id="@+id/taskTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="Time"
             android:inputType="time" />
@@ -59,7 +59,7 @@
         <EditText
             android:id="@+id/taskSubject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="Subject"
             android:inputType="text" />
@@ -67,7 +67,7 @@
         <EditText
             android:id="@+id/taskDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="Description"
             android:inputType="text" />
@@ -75,7 +75,7 @@
         <Spinner
             android:id="@+id/taskPriority"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:hint="Priority"
             android:spinnerMode="dropdown" />
 
