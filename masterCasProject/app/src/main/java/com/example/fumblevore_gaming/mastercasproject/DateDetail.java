@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class DateDetail extends AppCompatActivity {
@@ -34,12 +35,16 @@ public class DateDetail extends AppCompatActivity {
         });
 
         // get all attributes from addtask and store them permanantly and display in a list
-        Intent recieveData = getIntent();
-        String TaskName = recieveData.getStringExtra("TaskName");
-        String TaskDescription = recieveData.getStringExtra("TaskDescription");
-        String TaskSubject = recieveData.getStringExtra("TaskSubject");
-        String TaskPriority = recieveData.getStringExtra("TaskPriority");
 
+
+        Button readButton = findViewById(R.id.readTestButton);
+        TextView fileDisplay = findViewById(R.id.fildDisplay);
+        readButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fileDisplay.setText(FileWriting.ReadFile(DateDetail.this));
+            }
+        });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

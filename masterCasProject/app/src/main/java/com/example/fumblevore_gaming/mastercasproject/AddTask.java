@@ -2,6 +2,7 @@ package com.example.fumblevore_gaming.mastercasproject;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -21,6 +22,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class AddTask extends AppCompatActivity {
 
@@ -86,6 +96,7 @@ public class AddTask extends AppCompatActivity {
             }
         });
 
+
         // functionality to the button ADD
         Button createNewTask = findViewById(R.id.addTaskCreate);
         createNewTask.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +111,7 @@ public class AddTask extends AppCompatActivity {
                 TaskDate = TaskDateIN.getText().toString();
                 TaskTime = TaskTimeIN.getText().toString();
 
+
                 // creates new task object with inputted attributes.
                 Task test = new Task(TaskName, TaskSubject, TaskDescription, TaskPriority, TaskDate, TaskTime);
                 Log.d("task", test.getName());
@@ -109,12 +121,9 @@ public class AddTask extends AppCompatActivity {
                 Log.d("task", test.getDate());
                 Log.d("task", test.getTime());
 
-                // potentially useless code to send information to other activity.
+                FileWriting.saveToFile(AddTask.this, TaskName);
+
                 Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
-                transferToDisplay.putExtra("TaskName", TaskName);
-                transferToDisplay.putExtra("TaskSubject", TaskSubject);
-                transferToDisplay.putExtra("TaskDescription", TaskDescription);
-                transferToDisplay.putExtra("TaskPriority", TaskPriority);
 
                 startActivity(transferToDisplay);
 
@@ -122,5 +131,4 @@ public class AddTask extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
 }
