@@ -1,5 +1,6 @@
 package com.example.fumblevore_gaming.mastercasproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -7,12 +8,17 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
-    public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +37,30 @@ import android.view.Menu;
         drawer.addDrawerListener(toggle);
         toggle.syncState();
     }
+    @Override
+    public void onStop(){
+        super.onStop();
+        for (Task task : ToDoListFragment.taskList){
+            String line = task.getName() + "," + task.getDate() + "," + task.getTime() + "," + task.getSubject() + "," + task.getPriority() + "," + task.getDescription();
+            FileWriting.saveToFile(this,line);
+        }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menu_addtask:
+                Intent addTask = new Intent(MainActivity.this, AddTask.class);
+                startActivity(addTask);
+        }
+        return true;
+    }
     @Override
     public boolean onNavigationItemSelected( @NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -41,7 +70,6 @@ import android.view.Menu;
             case R.id.nav_todolist:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ToDoListFragment()).commit();
                 break;
-
                 }
 
             return true;

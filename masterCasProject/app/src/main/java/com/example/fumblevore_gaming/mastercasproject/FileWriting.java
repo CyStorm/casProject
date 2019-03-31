@@ -5,36 +5,33 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.*;
+import java.io.*;
 
 public class FileWriting {
     final static String FILENAME = "tasks.txt";
 
-    public static String ReadFile( Context context){
-        String line = null;
+
+    public static ArrayList<String> ReadFile( Context context){
+        ArrayList<String> tasks = new ArrayList<>();
+        String line;
         final String path = context.getFilesDir().getAbsolutePath();
+        File f = new File(path + FILENAME);
 
         try {
-            FileInputStream fileInputStream = new FileInputStream (new File(path + FILENAME));
+
+            FileInputStream fileInputStream = new FileInputStream (f);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             StringBuilder stringBuilder = new StringBuilder();
 
-            while ( (line = bufferedReader.readLine()) != null )
-            {
-                stringBuilder.append(line + System.getProperty("line.separator"));
+            while ( (line = bufferedReader.readLine()) != null ){
+                tasks.add(line);
             }
             fileInputStream.close();
-            line = stringBuilder.toString();
-
             bufferedReader.close();
+            RandomAccessFile raf = new RandomAccessFile(f, "rw");
+            raf.setLength(0);
         }
         catch(FileNotFoundException e) {
             e.printStackTrace();
@@ -42,7 +39,8 @@ public class FileWriting {
         catch(IOException e) {
             e.printStackTrace();
         }
-        return line;
+
+        return tasks;
     }
 
     public static boolean saveToFile(Context context, String data){

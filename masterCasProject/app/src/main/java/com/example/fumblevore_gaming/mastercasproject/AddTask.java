@@ -75,9 +75,21 @@ public class AddTask extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 Log.d("date", year + "/" + (month + 1) + "/" + dayOfMonth);
-                String selectedDate = year + "/" + (month + 1) + "/" + dayOfMonth;
+                String selectedDate;
+                if (month < 9) {
+                    if(dayOfMonth < 10) {
+                        selectedDate = year + "/0" + (month + 1) + "/0" + dayOfMonth;
+                    }
+                    else {
+                        selectedDate = year + "/0" + (month + 1) + "/" + dayOfMonth;
+                    }
+                }
+                else{
+                    selectedDate = year + "/" + (month + 1) + "/" + dayOfMonth;
+                }
                 TaskDateIN.setText(selectedDate);
             }
+
         };
 
         // time selection dialogue code
@@ -130,7 +142,7 @@ public class AddTask extends AppCompatActivity {
 
                     FileWriting.saveToFile(AddTask.this, saveLine);
 
-                    Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
+                    Intent transferToDisplay = new Intent(AddTask.this, MainActivity.class);
                     startActivity(transferToDisplay);
                 }
 

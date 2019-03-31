@@ -35,8 +35,8 @@ public class CalendarFragment extends Fragment {
             @Override
             public void onDateSelected(Date date) {
                 Log.d("Date Select", "date selected");
-                Intent viewDateDetails = new Intent(getActivity(), DateDetail.class);
-                startActivity(viewDateDetails);
+                Intent viewDateDetail = new Intent(getActivity(), DateDetail.class);
+                startActivity(viewDateDetail);
 
             }
             @Override
