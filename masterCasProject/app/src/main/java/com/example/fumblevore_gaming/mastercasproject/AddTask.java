@@ -34,7 +34,7 @@ import java.io.InputStreamReader;
 
 public class AddTask extends AppCompatActivity {
 
-    String TaskName, TaskSubject, TaskDescription, TaskPriority, TaskDate, TaskTime;
+    String TaskName, TaskDate, TaskTime, TaskSubject, TaskPriority, TaskDescription;
     private DatePickerDialog.OnDateSetListener dateSelect;
 
     @Override
@@ -99,33 +99,40 @@ public class AddTask extends AppCompatActivity {
 
         // functionality to the button ADD
         Button createNewTask = findViewById(R.id.addTaskCreate);
+
         createNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 TaskName = TaskNameIN.getText().toString();
-                TaskSubject = TaskSubjectIN.getText().toString();
-                TaskDescription = TaskDescriptionIN.getText().toString();
-                TaskPriority = TaskPriorityIN.getSelectedItem().toString();
                 TaskDate = TaskDateIN.getText().toString();
                 TaskTime = TaskTimeIN.getText().toString();
+                TaskSubject = TaskSubjectIN.getText().toString();
+                TaskPriority = TaskPriorityIN.getSelectedItem().toString();
+                TaskDescription = TaskDescriptionIN.getText().toString();
 
+                if (TaskName.length() == 0 ) {
+                    Snackbar.make(view, "Please enter a name", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (TaskDate.length() == 0 ) {
+                    Snackbar.make(view, "Please select a date", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (TaskTime.length() == 0) {
+                    Snackbar.make(view, "Please choose a time", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (TaskSubject.length() == 0) {
+                    Snackbar.make(view, "Please enter a subject", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (TaskDescription.length() == 0) {
+                    Snackbar.make(view, "Please enter a brief description", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else {
+                    String saveLine = TaskName + "," + TaskDate + "," + TaskTime + "," + TaskSubject + "," + TaskPriority + "," + TaskDescription;
 
-                // creates new task object with inputted attributes.
-                Task test = new Task(TaskName, TaskSubject, TaskDescription, TaskPriority, TaskDate, TaskTime);
-                Log.d("task", test.getName());
-                Log.d("task", test.getDescription());
-                Log.d("task", test.getPriority());
-                Log.d("task", test.getSubject());
-                Log.d("task", test.getDate());
-                Log.d("task", test.getTime());
+                    FileWriting.saveToFile(AddTask.this, saveLine);
 
-                FileWriting.saveToFile(AddTask.this, TaskName);
-
-                Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
-
-                startActivity(transferToDisplay);
+                    Intent transferToDisplay = new Intent(AddTask.this, DateDetail.class);
+                    startActivity(transferToDisplay);
+                }
 
             }
         });

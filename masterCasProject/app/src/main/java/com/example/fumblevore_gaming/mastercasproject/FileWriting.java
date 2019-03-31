@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
 public class FileWriting {
     final static String FILENAME = "tasks.txt";
 
-    public static  String ReadFile( Context context){
+    public static String ReadFile( Context context){
         String line = null;
         final String path = context.getFilesDir().getAbsolutePath();
 

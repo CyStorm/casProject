@@ -8,8 +8,8 @@ public class Task {
     private String date;
     private String time;
 
-
-    public Task(String name, String subject, String description, String priority, String date, String time) {
+// technically not needed anymore but keeping it here
+    public Task(String name, String date, String time, String subject, String priority, String description) {
         this.name = name;
         this.description = description;
         this.subject = subject;
