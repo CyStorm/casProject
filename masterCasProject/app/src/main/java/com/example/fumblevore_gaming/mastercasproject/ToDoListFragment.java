@@ -43,6 +43,7 @@ public class ToDoListFragment extends Fragment {
     public void buildToDoList(View view){
         todolist = view.findViewById(R.id.recyclerView);
         tasks = FileWriting.ReadFile(getActivity());
+        taskList.clear();
         for (String task : tasks){
             String[] p = task.split(",");
             taskList.add(new Task(p[0],p[1],p[2],p[3],p[4],p[5]));

@@ -13,10 +13,11 @@ public class FileWriting {
 
 
     public static ArrayList<String> ReadFile( Context context){
-        ArrayList<String> tasks = new ArrayList<>();
-        String line;
         final String path = context.getFilesDir().getAbsolutePath();
         File f = new File(path + FILENAME);
+
+        ArrayList<String> tasks = new ArrayList<>();
+        String line;
 
         try {
 
@@ -30,8 +31,7 @@ public class FileWriting {
             }
             fileInputStream.close();
             bufferedReader.close();
-            RandomAccessFile raf = new RandomAccessFile(f, "rw");
-            raf.setLength(0);
+
         }
         catch(FileNotFoundException e) {
             e.printStackTrace();
@@ -61,5 +61,21 @@ public class FileWriting {
             e.printStackTrace();
         }
         return  false;
+    }
+
+    public static void clearFile(Context context){
+        final String path = context.getFilesDir().getAbsolutePath();
+
+        try{
+            FileOutputStream fos = new FileOutputStream(path+FILENAME);
+            fos.write(("").getBytes());
+            fos.close();
+        }
+        catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onStop(){
         super.onStop();
+        FileWriting.clearFile(this);
         for (Task task : ToDoListFragment.taskList){
             String line = task.getName() + "," + task.getDate() + "," + task.getTime() + "," + task.getSubject() + "," + task.getPriority() + "," + task.getDescription();
             FileWriting.saveToFile(this,line);
