@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -36,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        //
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new mainPageFragment()).commit();
+
     }
     @Override
     public void onStop(){
@@ -65,17 +71,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected( @NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.nav_mainpage:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new mainPageFragment()).commit();
+                break;
             case R.id.nav_calendar:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CalendarFragment()).commit();
                 break;
+
             case R.id.nav_todolist:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ToDoListFragment()).commit();
                 break;
+
                 }
 
             return true;
 
         }
+
 
     @Override
     public void onBackPressed() {
@@ -87,5 +99,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     }
+    public void mainPageOpenCalendar(View view){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CalendarFragment()).commit();
+    }
+
+
 }
 
