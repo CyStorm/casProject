@@ -3,5 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="paleBlue">#c5d1eb</color>
+    <color name="slightLessPaleBlue">#92afd7</color>
+    <color name="plainGreen">#09814a</color>
+    <color name="disappointingGrey">#5a7684</color>
+    <color name="darkGreen">#1f2f16</color>
+
+
 
 </resources>

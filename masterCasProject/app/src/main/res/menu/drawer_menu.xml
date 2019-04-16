@@ -4,6 +4,10 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_mainpage"
+            android:icon="@drawable/ic_message"
+            android:title="Main Page" />
+        <item
             android:id="@+id/nav_calendar"
             android:icon="@drawable/ic_message"
             android:title="My Calendar"/>
@@ -11,6 +15,7 @@
             android:id="@+id/nav_todolist"
             android:icon="@drawable/ic_message"
             android:title="My To-Do List"/>
+
 
     </group>
 </menu>
