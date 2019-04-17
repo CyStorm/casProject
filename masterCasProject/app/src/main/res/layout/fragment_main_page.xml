@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/CalendarOpen"
             android:layout_width="84dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -45,11 +45,11 @@
             android:layout_marginTop="8dp"
             android:text="Calendar"
             android:textColor="@color/disappointingGrey"
-            app:layout_constraintStart_toStartOf="@+id/imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:layout_constraintStart_toStartOf="@+id/CalendarOpen"
+            app:layout_constraintTop_toBottomOf="@+id/CalendarOpen" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/ScheduleOpen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -66,8 +66,8 @@
             android:text="Priorities"
             android:textAlignment="center"
             android:textColor="@color/disappointingGrey"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+            app:layout_constraintEnd_toEndOf="@+id/ScheduleOpen"
+            app:layout_constraintTop_toBottomOf="@+id/ScheduleOpen" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -77,7 +77,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+            app:layout_constraintTop_toBottomOf="@+id/ScheduleOpen"
             app:srcCompat="@drawable/casimage" />
 
     </android.support.constraint.ConstraintLayout>
