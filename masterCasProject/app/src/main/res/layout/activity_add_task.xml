@@ -20,7 +20,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_add_task" />
+    <include
+        layout="@layout/content_add_task"
+        android:layout_width="371dp" />
 
 
 </android.support.design.widget.CoordinatorLayout>
