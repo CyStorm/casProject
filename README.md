@@ -1,2 +1,1 @@
-# casProject
-may 2019 cas project developing app
+CAS Project: Android Calendar App
